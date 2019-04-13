@@ -1,0 +1,28 @@
+<h1> Listado de estudiantes </h1>
+
+<table style="text-align: center">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Fecha de nacimiento </th>
+      <th>Programa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each_with_index do |student, index| %>
+      <tr>
+        <td>
+          <a href="/students/<%= index %>">
+            <%= student.nombre %>
+          </a>
+        </td>
+        <td><%= student.programa %></td>
+        <td><%= student.fecha_nacimiento %></td>
+        <td><%= student.correo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

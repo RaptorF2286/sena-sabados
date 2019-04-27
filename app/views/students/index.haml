@@ -1,0 +1,20 @@
+%h1 Listado de estudiantes
+
+%table{style: 'text-align: center'}
+  %thead
+    %tr
+      %th Nombre
+      %th Correo
+      %th Fecha de nacimiento
+      %th Programa
+  %tbody
+    - @students.each_with_index do |student, index|
+      %tr
+        %td
+          %a{href: "/students/#{index}"}= student.nombre 
+        %td= student.programa
+        %td= student.fecha_nacimiento
+        %td= student.correo
+%hr
+%a{href: '/teachers'} Ir a profesores
+

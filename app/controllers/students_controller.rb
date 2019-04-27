@@ -3,13 +3,13 @@ class StudentsController < ApplicationController
 
   get '/' do
     @students = Student.all
-    erb :index
+    haml :index
   end
 
   get '/:id' do
     id = params[:id].to_i
     student = Student.all[id]
     @student = student
-    erb :show
+    haml :show
   end
 end

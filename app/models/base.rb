@@ -1,11 +1,20 @@
 module Storage
   class Base
+    def save
+      file_path = File.join(APP_ROOT, 'db', 'students.txt')
+      File.write(file_path, 
+        "#{nombre}, #{programa}, #{fecha_nacimiento}, #{correo}", 
+        mode: 'a')
+
+
+    end
+
     def self.all
-      file.map { |item| new(*item)}
+      file.map { |item| new(*item) }
     end
 
     def self.file
-      File.open(file_path).map { |line| line.split(',')}
+      File.open(file_path).map { |line| line.split(',') }
     end
 
     def self.file_path
@@ -16,8 +25,5 @@ module Storage
       raise 'NotImplementedError'
     end
 
-    def self.create(element)
-      File.open(file_path, w) { |f| f.write(element) }
-    end
   end
 end

@@ -1,44 +1,50 @@
 class StudentsController < ApplicationController
   set :views, File.join(* APP_ROOT, 'app', 'views', 'students')
-# before_action :set_student, only: %[]
 
   get '/' do
     @students = Student.all
     haml :index
   end
 
-  get '/:id' do
-    id = params[:id].to_i
-    student = Student.all[id]
-    @student = student
-    haml :show
-  end
-  
+  # get '/:id' do
+  #   id = params[:id].to_i
+  #   student = Student.all[id]
+  #   @student = student
+  #   haml :show
+  # end
+
   get '/new' do
     haml :new
   end
 
-  get '/create' do
-    student = Student.new(student_params)
+  post '/create' do
+    student = Student.new(
+      params[:nombre],
+      params[:programa],
+      params[:fecha_nacimiento],
+      params[:correo]
+    )
+    puts student
     student.save
+    redirect '/students'
   end
 
-  get '/edit/:id' do
-    haml :edit
-  end
+  # get '/edit/:id' do
+  #   haml :edit
+  # end
 
-  get '/update/:id' do
-  end
+  # get '/update/:id' do
+  # end
 
-  private 
+  # private
 
-  def set_student
-    id = params[:id].to_i
-    student = Student.all[id]
-    @student = student
-  end
+  # def set_student
+  #   id = params[:id].to_i
+  #   student = Student.all[id]
+  #   @student = student
+  # end
 
-  def student_params
-    student = params.require(:student).permit(%i[:nombre :programa :fecha_nacimiento :correo])
-  end
+  # def student_params
+  #   params.require(:student).permit(:nombre, :programa, :fecha_nacimiento, :correo)
+  # end
 end

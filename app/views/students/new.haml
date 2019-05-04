@@ -1,0 +1,20 @@
+%h1 NUUUUEVO Alumno
+%hr
+  %form{action: '/students/create', method: 'post'}
+    .input-field
+      %label{for: 'nombre'} Nombre
+      %input{type: 'text', name: 'student[nombre]'}
+
+    .input-field
+      %label{for: 'nombre'} Programa
+      %input{type: 'text', name: 'student[programa]'}
+
+    .input-field
+      %label{for: 'nombre'} Fecha de nacimiento
+      %input{type: 'date', name: 'student[fecha_nacimiento]'}
+
+    .input-field
+      %label{for: 'nombre'} Correo electrónico
+      %input{type: 'email', name: 'student[correo]'}
+
+    %button{type: 'submit'} Guardar

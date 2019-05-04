@@ -16,5 +16,8 @@ module Storage
       raise 'NotImplementedError'
     end
 
+    def self.create(element)
+      File.open(file_path, w) { |f| f.write(element) }
+    end
   end
 end

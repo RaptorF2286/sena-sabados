@@ -1,32 +1,29 @@
 class StudentsController < ApplicationController
-  set :views, File.join(* APP_ROOT, 'app', 'views', 'students')
+ # set :views, File.join(* APP_ROOT, 'app', 'views', 'students')
+  set :views, Proc.new { File.join(APP_ROOT, 'app', 'views' ,'students') } 
+  set :haml, layout: :'../layouts/application_layout'
+
 
   get '/' do
     @students = Student.all
     haml :index
   end
 
-  # get '/:id' do
-  #   id = params[:id].to_i
-  #   student = Student.all[id]
-  #   @student = student
-  #   haml :show
-  # end
-
   get '/new' do
-    haml :new
+    haml :new 
   end
 
-  post '/create' do
-    student = Student.new(
-      params[:nombre],
-      params[:programa],
-      params[:fecha_nacimiento],
-      params[:correo]
-    )
-    puts student
+  post '/' do
+    student = Student.new(student_params)
     student.save
     redirect '/students'
+  end
+
+  get '/:id' do
+    id = params[:id].to_i
+    student = Student.all[id]
+    @student = student
+    haml :show
   end
 
   # get '/edit/:id' do
@@ -36,15 +33,9 @@ class StudentsController < ApplicationController
   # get '/update/:id' do
   # end
 
-  # private
+  private
 
-  # def set_student
-  #   id = params[:id].to_i
-  #   student = Student.all[id]
-  #   @student = student
-  # end
-
-  # def student_params
-  #   params.require(:student).permit(:nombre, :programa, :fecha_nacimiento, :correo)
-  # end
+  def student_params
+    params[:student]
+  end
 end

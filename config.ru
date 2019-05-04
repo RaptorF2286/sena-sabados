@@ -1,3 +1,4 @@
+require 'csv'
 require 'sinatra'
 require 'haml'
 
@@ -16,3 +17,4 @@ require_relative 'app/models/teacher'
 #Rutas
 map('/students') { run StudentsController }
 map('/teachers') { run TeachersController }
+

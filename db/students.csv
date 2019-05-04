@@ -1,3 +1,4 @@
+nombre,programa,fecha_nacimiento,correo
 Pepito, Confeccion, 02/24/1990, pepito@example.com
 Usuario 1, Programa 1, 01/01/1901, usuario1@example.com
 Usuario 2, Programa 2, 02/02/1902, usuario2@example.com
@@ -11,3 +12,4 @@ Usuario 9, Programa 9, 09/09/1909, usuario9@example.com
 Usuario 10, Programa 10, 10/01/1910, usuario10@example.com
 Usuario 11, Programa 11, 11/01/1911, usuario11@example.com
 Usuario 12, Programa 12, 11/01/1912, usuario12@example.com
+example,example,1966-06-06,example@example.com

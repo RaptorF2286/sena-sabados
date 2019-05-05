@@ -1,8 +1,6 @@
 class StudentsController < ApplicationController
- # set :views, File.join(* APP_ROOT, 'app', 'views', 'students')
-  set :views, Proc.new { File.join(APP_ROOT, 'app', 'views' ,'students') } 
+  set :views, File.join(APP_ROOT, 'app', 'views', 'students')
   set :haml, layout: :'../layouts/application_layout'
-
 
   get '/' do
     @students = Student.all
@@ -10,7 +8,7 @@ class StudentsController < ApplicationController
   end
 
   get '/new' do
-    haml :new 
+    haml :new
   end
 
   post '/' do

@@ -1,5 +1,11 @@
 %h1 Listado de profesores
 
+%a.mdc-button.mdc-button--outlined{href: '/teachers/new'}
+  %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} person_add
+  %span.mdc-button__label Crear Profesor
+
+%hr/
+
 %table{style: 'text-align: center'}
   %thead
     %tr
@@ -15,6 +21,3 @@
         %td= teacher.programa
         %td= teacher.fecha_nacimiento
         %td= teacher.correo
-
-%hr
-%a{href: '/students'} Ir a estudiantes

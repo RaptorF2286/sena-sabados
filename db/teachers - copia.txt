@@ -1,7 +1,0 @@
-Pepito, Confeccion, 02/24/1990, pepito@example.com
-Usuario 1, Programa 1, 01/01/1901, usuario1@example.com
-Usuario 2, Programa 2, 02/02/1902, usuario2@example.com
-Usuario 3, Programa 3, 03/03/1903, usuario3@example.com
-Usuario 10, Programa 10, 10/01/1910, usuario10@example.com
-Usuario 11, Programa 11, 11/01/1911, usuario11@example.com
-Usuario 12, Programa 12, 11/01/1912, usuario12@example.com

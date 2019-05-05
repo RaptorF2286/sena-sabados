@@ -1,21 +1,3 @@
-%h1 Nuevo Estudiante
+Nuevo estudiante
 %hr
-  %form{action: '/students', method: 'post'}
-    .input-field
-      %label{for: 'nombre'} Nombre
-      %input{type: 'text', name: 'student[nombre]'}
-
-    .input-field
-      %label{for: 'student[programa]'} Programa
-      %input{type: 'text', name: 'student[programa]'}
-
-    .input-field
-      %label{for: 'student[fecha_nacimiento]'} Fecha de nacimiento
-      %input{type: 'date', name: 'student[fecha_nacimiento]'}
-
-    .input-field
-      %label{for: 'student[correo]'} Correo electrónico
-      %input{type: 'email', name: 'student[correo]'}
-
-    %button{type: 'submit'} Guardar
-
+  = haml :_form, layout: false

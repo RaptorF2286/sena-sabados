@@ -1,9 +1,68 @@
 %html
   %head 
-    %title Wiii
-    %link{rel: "stylesheet", href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' }
-    %body 
-      %h1 Sena sinatra
-    %div
-      = yield
+    %title Sena Sinatra
+    %link{rel: "stylesheet", href: "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" }
+    %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css", rel: "stylesheet"}/
+
+    :css
+      body {
+        display: flex;
+        height: 100vh;
+      }
+      .mdc-drawer-app-content {
+        flex: auto;
+        overflow: auto;
+        position: relative;
+      }
+      .main-content {
+        overflow: auto;
+        height: 100%;
+      }
+      .app-bar {
+        position: absolute;
+      }
+      .mdc-top-app-bar {
+        z-index: 7;
+      }
+  %body 
+    %header.mdc-top-app-bar
+      .mdc-top-app-bar__row
+        %section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
+          %button.mdc-top-app-bar__navigation-icon.material-icons menu
+          %a.mdc-top-app-bar__title{href: "#", style: "color: inherit"} Sena
+    .app-drawer-layout.mdc-top-app-bar--fixed-adjust
+      %aside.mdc-drawer.mdc-drawer--dismissible.demo-drawer
+        %nav.mdc-drawer__drawer
+          %nav.mdc-drawer__content
+            #icon-with-text-demo.mdc-list
+              %a.mdc-list-item.demo-drawer-list-item{:href => "/students"}
+                %i.material-icons.mdc-list-item__graphic{"aria-hidden" => "true"}> star
+                Estudiantes
+              %a.mdc-list-item.demo-drawer-list-item{:href => "/teachers"}
+                %i.material-icons.mdc-list-item__graphic{"aria-hidden" => "true"}> send
+                Profesores
+      %main.mdc-drawer-app-content.main-content
+        = yield
+
+
+    %script{src: "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"}
+    :javascript
+      const MDC = window.mdc
+      MDC.autoInit();
+      // Instantiate MDC Drawer
+      const drawerEl = document.querySelector('.mdc-drawer');
+      const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+
+      // Instantiate MDC Top App Bar (required)
+      const topAppBarEl = document.querySelector('.mdc-top-app-bar');
+      const topAppBar = new mdc.topAppBar.MDCTopAppBar.attachTo(topAppBarEl);
+
+      topAppBar.setScrollTarget(document.querySelector('.main-content'));
+      topAppBar.listen('MDCTopAppBar:nav', () => {
+        drawer.open = !drawer.open;
+      });
+
+        
+
 

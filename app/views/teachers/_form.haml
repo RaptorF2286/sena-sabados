@@ -1,23 +1,39 @@
 %form{action: '/teachers', method: 'post'}
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon favorite
     %input#teacher_name.mdc-text-field__input{type: "text", name: 'teacher[nombre]'}/
-    %label.mdc-floating-label{for: 'teacher_name'} Nombre
-    .mdc-line-ripple
-
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'teacher_name'} Nombre
+      .mdc-notched-outline__trailing
+      
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon favorite
     %input#teacher_program.mdc-text-field__input{type: 'text', name: 'teacher[programa]'}
-    %label.mdc-floating-label{for: 'teacher_program'} Programa
-    .mdc-line-ripple
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'teacher_program'} Programa
+      .mdc-notched-outline__trailing
 
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon favorite
     %input#teacher_dob.mdc-text-field__input{type: 'date', name: 'teacher[fecha_nacimiento]'}
-    %label.mdc-floating-label{for: 'teacher_dob'} Fecha de nacimiento
-    .mdc-line-ripple
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'teacher_dob'} Fecha de nacimiento
+      .mdc-notched-outline__trailing
 
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon favorite
     %input#teacher_mail.mdc-text-field__input{type: 'email', name: 'teacher[correo]'}
-    %label.mdc-floating-label{for: 'teacher_mail'} Correo electrónico
-    .mdc-line-ripple
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'teacher_mail'} Correo electrónico
+      .mdc-notched-outline__trailing
 
   %button.mdc-button.mdc-button--outlined{type: 'submit'}
     %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} save

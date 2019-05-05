@@ -1,8 +1,8 @@
 %h1 Listado de estudiantes
 
-
-
-%a{href: '/students/new'} Crear Alumno
+%a.mdc-button.mdc-button--outlined{href: '/students/new'}
+  %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} person_add
+  %span.mdc-button__label Crear Alumno
 
 %hr/
 
@@ -21,6 +21,3 @@
         %td= student.programa
         %td= student.fecha_nacimiento
         %td= student.correo
-%hr
-%a{href: '/teachers'} Ir a profesores
-

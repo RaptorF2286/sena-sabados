@@ -13,6 +13,8 @@
       body {
         display: flex;
         height: 100vh;
+        width: 100vw;
+        max-width: 100%;
       }
       .mdc-drawer-app-content {
         flex: auto;
@@ -29,13 +31,17 @@
       .mdc-top-app-bar {
         z-index: 7;
       }
+      .center-content{
+        margin: auto;
+      }
+
   %body
     %header.mdc-top-app-bar
       .mdc-top-app-bar__row
         %section.mdc-top-app-bar__section.mdc-top-app-bar__section--align-start
           %button.mdc-top-app-bar__navigation-icon.material-icons menu
           %a.mdc-top-app-bar__title{href: "#", style: "color: inherit"} Sena
-    .app-drawer-layout.mdc-top-app-bar--fixed-adjust
+    .app-drawer-layout.mdc-top-app-bar--fixed-adjust.center-content
       %aside.mdc-drawer.mdc-drawer--dismissible.demo-drawer
         %nav.mdc-drawer__drawer
           %nav.mdc-drawer__content

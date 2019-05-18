@@ -12,18 +12,24 @@ class TeachersController < ApplicationController
   end
 
   post '/' do
-    teacher = Teacher.new(teacher_params)
-    teacher.save
+    Teacher.create(teacher_params)
     redirect '/teachers'
   end
 
   get '/:id' do
-    id = params[:id].to_i
-    teacher = Teacher.all[id]
+    id = params[:id]
+    teacher = Teacher.find(id)
     @teacher = teacher
     haml :show
   end
 
+
+  delete '/:id' do
+    id = params[:id]
+    Teacher.destroy(id)
+
+    redirect '/teachers'
+  end
 
   private
 

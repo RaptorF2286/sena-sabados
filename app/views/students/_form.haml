@@ -1,24 +1,41 @@
 %form{action: '/students', method: 'post'}
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
-    %input#student_name.mdc-text-field__input{type: "text", name: 'student[nombre]'}/
-    %label.mdc-floating-label{for: 'student_name'} Nombre
-    .mdc-line-ripple
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_name.mdc-text-field__input{type: "text", name: 'student[name]'}/
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_name'} Nombre
+      .mdc-notched-outline__trailing
 
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
-    %input#student_program.mdc-text-field__input{type: 'text', name: 'student[programa]'}
-    %label.mdc-floating-label{for: 'student_program'} Programa
-    .mdc-line-ripple
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_program.mdc-text-field__input{type: 'text', name: 'student[program]'}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_program'} Programa
+      .mdc-notched-outline__trailing
 
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
-    %input#student_dob.mdc-text-field__input{type: 'date', name: 'student[fecha_nacimiento]'}
-    %label.mdc-floating-label{for: 'student_dob'} Fecha de nacimiento
-    .mdc-line-ripple
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_dob.mdc-text-field__input{type: 'date', name: 'student[birthday]'}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_birthday'} Fecha de nacimiento
+      .mdc-notched-outline__trailing
 
-  .mdc-text-field{"data-mdc-auto-init": "MDCTextField"}
-    %input#student_mail.mdc-text-field__input{type: 'email', name: 'student[correo]'}
-    %label.mdc-floating-label{for: 'student_mail'} Correo electrónico
-    .mdc-line-ripple
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_mail.mdc-text-field__input{type: 'email', name: 'student[email]'}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_email'} Correo electrónico
+      .mdc-notched-outline__trailing
 
   %button.mdc-button.mdc-button--outlined{type: 'submit'}
     %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} save
     %span.mdc-button__label Guardar
+

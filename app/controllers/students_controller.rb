@@ -12,16 +12,22 @@ class StudentsController < ApplicationController
   end
 
   post '/' do
-    student = Student.new(student_params)
-    student.save
+    Student.create(student_params)
     redirect '/students'
   end
 
   get '/:id' do
-    id = params[:id].to_i
-    student = Student.all[id]
+    id = params[:id]
+    student = Student.find(id)
     @student = student
     haml :show
+  end
+
+  delete '/:id' do
+    id = params[:id]
+    Student.destroy(id)
+
+    redirect '/students'
   end
 
   # get '/edit/:id' do

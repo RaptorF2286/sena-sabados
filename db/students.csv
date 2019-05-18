@@ -1,15 +1,9 @@
-nombre,programa,fecha_nacimiento,correo
-Pepito, Confeccion, 02/24/1990, pepito@example.com
-Usuario 1, Programa 1, 01/01/1901, usuario1@example.com
-Usuario 2, Programa 2, 02/02/1902, usuario2@example.com
-Usuario 3, Programa 3, 03/03/1903, usuario3@example.com
-Usuario 4, Programa 4, 04/04/1904, usuario4@example.com
-Usuario 5, Programa 5, 05/05/1905, usuario5@example.com
-Usuario 6, Programa 6, 06/06/1906, usuario6@example.com
-Usuario 7, Programa 7, 07/07/1907, usuario7@example.com
-Usuario 8, Programa 8, 08/08/1908, usuario8@example.com
-Usuario 9, Programa 9, 09/09/1909, usuario9@example.com
-Usuario 10, Programa 10, 10/01/1910, usuario10@example.com
-Usuario 11, Programa 11, 11/01/1911, usuario11@example.com
-Usuario 12, Programa 12, 11/01/1912, usuario12@example.com
-example,example,1966-06-06,example@example.com
+Programa 1, Usuario 1,1,1901-01-01, usuario1@example.com
+Programa 2, Usuario 2,2,1902-02-02, usuario2@example.com
+Programa 3, Usuario 3,3,1903-03-03, usuario3@example.com
+Programa 4, Usuario 4,4,1904-04-04, usuario4@example.com
+Programa 5, Usuario 5,5,1905-05-05, usuario5@example.com
+Programa 6, Usuario 6,6,1906-06-06, usuario6@example.com
+Programa 7, Usuario 7,7,1907-07-07, usuario7@example.com
+Programa 8, Usuario 8,8,1908-08-08, usuario8@example.com
+Programa 9, Usuario 9,9,1909-09-09, usuario9@example.com

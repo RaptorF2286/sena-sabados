@@ -9,15 +9,17 @@
 %table{style: 'text-align: center'}
   %thead
     %tr
+      %th Id
       %th Nombre
       %th Correo
       %th Fecha de nacimiento
       %th Programa
   %tbody
-    - @students.each_with_index do |student, index|
+    - @students.each do |student|
       %tr
+        %td= student.id
         %td
-          %a{href: "/students/#{index}"}= student.nombre 
-        %td= student.programa
-        %td= student.fecha_nacimiento
-        %td= student.correo
+          %a{href: "/students/#{student.id}"}= student.name
+        %td= student.email
+        %td= student.birthday
+        %td= student.program

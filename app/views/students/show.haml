@@ -1,8 +1,13 @@
-%h1=  @student.nombre
+%h1=  @student.name
 %ul
-  %li= @student.programa
-  %li= @student.fecha_nacimiento
-  %li= @student.correo
+  %li= @student.program
+  %li= @student.birthday
+  %li= @student.email
 
+%form{action: "/students/#{@student.id}", method: 'post'}
+  %input{type: 'hidden', name: '_method', value: 'delete'}
+  %button.mdc-button.mdc-button--outlined{type: 'submit'}
+    %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} person_add
+    %span.mdc-button__label Eliminar
+%br
 %a{href: '/students'} Volver
-

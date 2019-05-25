@@ -32,6 +32,14 @@ module ActiveRecord
       new(results.each.first)
     end
 
+    def self.update(params)
+      mapped_values = []
+      params.each { |key,value| mapped_values << "#{key} = '#{value}'" }
+      query = "UPDATE #{table_name} SET #{mapped_values.join(', ')} where id = '#{params[:id]}';"
+
+      execute_query(query)
+    end
+
     def self.destroy(id)
       results = execute_query("delete from #{table_name} where id = #{id}")
       raise('Record not found') if results.cmd_tuples.zero?

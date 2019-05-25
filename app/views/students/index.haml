@@ -14,6 +14,7 @@
       %th Correo
       %th Fecha de nacimiento
       %th Programa
+      %th Acción
   %tbody
     - @students.each do |student|
       %tr
@@ -23,3 +24,5 @@
         %td= student.email
         %td= student.birthday
         %td= student.program
+        %td
+          %a{href: "/students/#{student.id}/edit", class: "mdc-button"} Editar

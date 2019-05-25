@@ -1,0 +1,46 @@
+%h1.mdc-typography--headline2 Nuevo estudiante
+%hr
+%form{action: "/students/#{@student.id}", method: 'post'}
+  %input{type: 'hidden', name: '_method', value: 'patch'}
+  %input{type: 'hidden', name: 'student[id]', value: @student.id}
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_name.mdc-text-field__input{type: "text", name: 'student[name]', value: @student.name}/
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_name'} Nombre
+      .mdc-notched-outline__trailing
+
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_program.mdc-text-field__input{type: 'text', name: 'student[program]', value: @student.program}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_program'} Programa
+      .mdc-notched-outline__trailing
+
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_dob.mdc-text-field__input{type: 'date', name: 'student[birthday]', value: @student.birthday}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_birthday'} Fecha de nacimiento
+      .mdc-notched-outline__trailing
+
+  .mdc-text-field.mdc-text-field--outlined.mdc-text-field--with-leading-icon{"data-mdc-auto-init": "MDCTextField"}
+    %i.material-icons.mdc-text-field__icon person
+    %input#student_mail.mdc-text-field__input{type: 'email', name: 'student[email]', value: @student.email}
+    .mdc-notched-outline
+      .mdc-notched-outline__leading
+      .mdc-notched-outline__notch
+        %label.mdc-floating-label{for: 'student_email'} Correo electrónico
+      .mdc-notched-outline__trailing
+
+  %button.mdc-button.mdc-button--outlined{type: 'submit'}
+    %i.material-icons.mdc-button__icon{"aria-hidden" => "true"} save
+    %span.mdc-button__label Guardar
+
+

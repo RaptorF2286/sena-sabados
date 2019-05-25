@@ -18,21 +18,20 @@ class StudentsController < ApplicationController
 
   get '/:id' do
     id = params[:id]
-    student = Student.find(id)
-    @student = student
+    @student = Student.find(id)
     haml :show
   end
 
   get '/:id/edit' do
     id = params[:id]
-    student = Student.find(id)
-    @student = student
+    @student = Student.find(id)
     haml :edit
   end
 
   patch '/:id' do
-    Student.update(student_params)
-    redirect '/students'
+    student = Student.find(params[:id])
+    student.update(student_params)
+    redirect "/students/#{params[:id]}"
   end
 
   delete '/:id' do

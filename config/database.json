@@ -1,0 +1,6 @@
+{
+  "adapter": "postgresql",
+  "username": "postgres",
+  "password": "123654abc",
+  "database": "sena_sinatra_ar"
+}
